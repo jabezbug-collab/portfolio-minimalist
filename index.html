@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVID JABEZ.M | THE E-COM ARCHITECT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF9F6;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .section-gap {
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+        .btn-minimal {
+            border: 1px solid #1A1A1A;
+            color: #1A1A1A;
+            padding: 16px 32px;
+            font-size: 0.875rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            display: inline-block;
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+        .btn-minimal:hover {
+            background: #1A1A1A;
+            color: #FAF9F6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 9rem);
+            line-height: 1.1;
+            transition: all 0.6s ease;
+        }
+        .hero-title:hover {
+            letter-spacing: 0.05em;
+        }
+        .luxury-line {
+            width: 60px;
+            height: 1px;
+            background: #1A1A1A;
+            margin-bottom: 2rem;
+            transition: width 0.6s ease;
+        }
+        .luxury-line:hover {
+            width: 120px;
+        }
+        .project-row {
+            border-bottom: 1px solid #DDD;
+            transition: all 0.3s ease;
+            cursor-pointer;
+        }
+        .project-row:hover {
+            background: rgba(0,0,0,0.02);
+            padding-left: 20px;
+            border-bottom-color: #1A1A1A;
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            color: #1A1A1A;
+        }
+        .cursor-follower {
+            width: 15px;
+            height: 15px;
+            background: #1A1A1A;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="selection:bg-stone-200">
+
+    <div class="cursor-follower" id="cursor"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-8 flex justify-between items-baseline">
+        <div class="font-medium text-sm uppercase tracking-widest">David Jabez.M</div>
+        <div class="flex gap-8 text-xs uppercase tracking-widest font-medium opacity-60">
+            <a href="#work" class="hover:opacity-100 transition-opacity">Work</a>
+            <a href="#about" class="hover:opacity-100 transition-opacity">About</a>
+            <a href="mailto:jabeztechw@gmail.com" class="hover:opacity-100 transition-opacity">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="min-h-screen px-8 flex flex-col justify-center max-w-6xl mx-auto">
+            <div class="luxury-line"></div>
+            <h1 class="hero-title leading-tight mb-12">
+                Curating <span class="italic">conversion</span><br>through elegant design.
+            </h1>
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-12">
+                <p class="text-xl md:text-2xl max-w-lg opacity-70 font-light leading-relaxed">
+                    Professional E-commerce Web Designer specializing in luxury digital experiences and commercial growth.
+                </p>
+                <a href="mailto:jabeztechw@gmail.com" class="btn-minimal">
+                    Hire Me
+                </a>
+            </div>
+        </section>
+
+        <!-- MARQUEE SECTION -->
+        <section class="py-12 bg-stone-900 text-stone-100 overflow-hidden">
+            <div class="marquee">
+                <div class="marquee-content text-5xl md:text-7xl font-serif italic opacity-30 uppercase tracking-tighter">
+                    High Conversion &bull; Luxury UX &bull; Revenue Growth &bull; E-commerce Architecture &bull; High Conversion &bull; Luxury UX &bull; Revenue Growth &bull; E-commerce Architecture &bull;
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="section-gap px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 border-y border-stone-200">
+            <div class="flex flex-col items-center text-center">
+                <div class="stat-number" data-value="98">0</div>
+                <p class="text-xs uppercase tracking-widest opacity-50 mt-4">Satisfaction %</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <div class="stat-number" data-value="150">0</div>
+                <p class="text-xs uppercase tracking-widest opacity-50 mt-4">Stores Launched</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <div class="stat-number" data-value="22">0</div>
+                <p class="text-xs uppercase tracking-widest opacity-50 mt-4">Avg. Conv. Lift %</p>
+            </div>
+        </section>
+
+        <!-- WORK SECTION -->
+        <section id="work" class="section-gap px-8 max-w-6xl mx-auto">
+            <h2 class="text-4xl mb-24 italic text-center">Selected Archive</h2>
+
+            <div class="flex flex-col">
+                <!-- Project 1 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2025</span>
+                        <h3 class="text-3xl">SMART NURSE</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Healthcare e-commerce optimization. Streamlining medical supply procurement.</p>
+                    <a href="https://smartnursev11.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2024</span>
+                        <h3 class="text-3xl">JABEZ TEAMS</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Team management portal for digital agencies. High-efficiency task tracking.</p>
+                    <a href="https://jabezteams.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2024</span>
+                        <h3 class="text-3xl">HAPPY FATHER</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Niche gift e-commerce site. Optimized for emotional triggers.</p>
+                    <a href="https://happyfather.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2024</span>
+                        <h3 class="text-3xl">HAPPY MOTHER ANNIE</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Bespoke floral and gift shop. Personalized gift-wrapping UX.</p>
+                    <a href="https://happymotherannie.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2024</span>
+                        <h3 class="text-3xl">DHANVANTRI</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Ayurvedic health store. Balanced traditional values with modern conversion.</p>
+                    <a href="https://dhanvantri1.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2024</span>
+                        <h3 class="text-3xl">DHANVANTRI LANDING</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">High-converting landing page for Ayurvedic product launches.</p>
+                    <a href="https://dhanvantri-landingpage.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2024</span>
+                        <h3 class="text-3xl">JABEZ PORTFOLIO</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Personal showcase of architectural design and frontend engineering.</p>
+                    <a href="https://portfoliodavidjabez.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1">View</a>
+                </div>
+                <!-- Project 8 -->
+                <div class="project-row flex flex-col md:flex-row justify-between items-start md:items-center py-12 gap-4">
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs opacity-40 font-medium">2023</span>
+                        <h3 class="text-3xl">B-DAY APPA</h3>
+                    </div>
+                    <p class="max-w-md opacity-60 font-light text-sm">Luxe interactive digital birthday experience.</p>
+                    <a href="https://happybirthdayappa.pages.dev/" target="_blank" class="text-xs uppercase tracking-widest font-bold border-black pb-1">View</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section-gap px-8 max-w-6xl mx-auto text-center">
+            <h2 class="text-5xl mb-12 italic">About the Designer</h2>
+            <p class="text-xl opacity-70 font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                I don't just design websites; I engineer digital revenue streams. I combine high-end aesthetics with rigorous conversion data to create stores that sell.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 uppercase text-xs tracking-widest font-bold opacity-60">
+                <div class="border-t border-stone-200 pt-4">Next.js</div>
+                <div class="border-t border-stone-200 pt-4">Tailwind CSS</div>
+                <div class="border-t border-stone-200 pt-4">Shopify Plus</div>
+                <div class="border-t border-stone-200 pt-4">Luxe UI</div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section-gap px-8 text-center max-w-3xl mx-auto">
+            <h2 class="text-6xl mb-12 leading-tight">Let's collaborate<br>on your next vision.</h2>
+            <a href="mailto:jabeztechw@gmail.com" class="btn-minimal text-lg px-12 py-6">
+                Get in Touch
+            </a>
+        </section>
+    </main>
+
+    <footer class="px-8 py-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-8 opacity-50 text-xs uppercase tracking-widest">
+        <div class="font-medium">David Jabez.M &copy; 2026</div>
+        <div class="flex gap-8">
+            <a href="mailto:jabeztechw@gmail.com" class="hover:opacity-100 transition-opacity">Email</a>
+            <a href="https://www.instagram.com/webmakers123" target="_blank" class="hover:opacity-100 transition-opacity">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, {
+                x: e.clientX - 7,
+                y: e.clientY - 7,
+                duration: 0.1
+            });
+        });
+
+        // Hero fade
+        gsap.from("h1", {
+            opacity: 0,
+            y: 30,
+            duration: 1.5,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        // Stats counter
+        const counters = document.querySelectorAll('.stat-number');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-value');
+            ScrollTrigger.create({
+                trigger: counter,
+                onEnter: () => {
+                    let count = 0;
+                    const interval = setInterval(() => {
+                        count++;
+                        counter.innerText = count;
+                        if (count === target) clearInterval(interval);
+                    }, 20);
+                }
+            });
+        });
+
+        // Projects stagger
+        gsap.from(".project-row", {
+            opacity: 0,
+            x: -20,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#work",
+                start: "top 98%",
+                toggleActions: "play none none none",
+                once: true
+            }
+        });
+        // Fail-safe for cards
+        ScrollTrigger.refresh();
+        gsap.set(".project-row", { opacity: 1, x: 0, delay: 2 });
+    </script>
+</body>
+</html>
